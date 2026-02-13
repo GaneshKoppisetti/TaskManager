@@ -1,0 +1,168 @@
+/* Reset (important for responsiveness) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background */
+.dashboard-container {
+  min-height: 90vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  animation: fadeIn 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.dashboard-title {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  animation: slideDown 0.8s ease-in-out;
+}
+
+/* Cards Layout */
+.cards-container {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Card Design */
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  padding: 30px 25px;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Card Hover Animation */
+.dashboard-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Card Colors */
+.todo {
+  border-top: 5px solid #00f5a0;
+}
+
+.pending {
+  border-top: 5px solid #f7971e;
+}
+
+.completed {
+  border-top: 5px solid #56ccf2;
+}
+
+/* Headings */
+.dashboard-card h2 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.dashboard-card p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Button Styling */
+.dashboard-card button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background: white;
+  color: #333;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.dashboard-card button:hover {
+  background: #333;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Stagger animation */
+.dashboard-card:nth-child(1) { animation-delay: 0.2s; }
+.dashboard-card:nth-child(2) { animation-delay: 0.4s; }
+.dashboard-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* -------- Responsive Improvements -------- */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .dashboard-container {
+    padding: 30px 15px;
+  }
+
+  .dashboard-title {
+    margin-bottom: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .dashboard-container {
+    padding: 25px 15px;
+  }
+
+  .dashboard-card {
+    padding: 25px 20px;
+  }
+
+  .dashboard-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .dashboard-card p {
+    font-size: 0.9rem;
+  }
+
+  .dashboard-card button {
+    width: 100%;
+  }
+}

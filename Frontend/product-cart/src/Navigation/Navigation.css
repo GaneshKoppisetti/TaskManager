@@ -1,0 +1,120 @@
+/* Layout */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #141e30, #243b55);
+  color: white;
+  padding: 30px 20px;
+  position: fixed;
+  height: 100%;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.4);
+  transition: 0.4s ease;
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.logo-icon {
+  font-size: 28px;
+  animation: floatLogo 3s ease-in-out infinite;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #00f5a0, #00d9f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 18px 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #cfd8dc;
+  font-size: 15px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Icons */
+.nav-icon {
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+  background: rgba(0, 245, 160, 0.15);
+  color: #00f5a0;
+  transform: translateX(6px);
+}
+
+.nav-links a:hover .nav-icon {
+  transform: scale(1.2);
+}
+
+/* Active Link */
+.nav-links a.active {
+  background: linear-gradient(90deg, #00f5a0, #00d9f5);
+  color: #141e30;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 245, 160, 0.4);
+}
+
+/* Active Animation */
+.nav-links a.active .nav-icon {
+  transform: scale(1.2);
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 260px;
+  padding: 40px;
+  flex: 1;
+  background: #f4f6f9;
+  min-height: 100vh;
+  transition: 0.3s ease;
+}
+
+/* Logo Floating Animation */
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 210px;
+  }
+
+  .main-content {
+    margin-left: 210px;
+  }
+}
