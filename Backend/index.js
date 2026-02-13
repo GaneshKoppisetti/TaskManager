@@ -1,13 +1,15 @@
 console.log("Ganesh Backend is running...");
 const express = require('express');
+const cors = require('cors');
 const app = express();
-const port = 3000;
+const port = 4000;
 const connectToDB = require('./config/config');
  connectToDB();
 app.get('/',(req,res)=>{
     res.send("Hello from Ganesh Backend");
 })
 app.use(express.json());
+app.use(cors('*'));
 const productRoute = require('./routes/productRoute');
 const userRoute = require('./routes/userRoute');
 const taskRoute = require('./routes/taskRoute');

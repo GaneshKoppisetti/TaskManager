@@ -7,6 +7,7 @@ import Loader from './Shared/Loader';
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+document.title = 'Task Manager';
 root.render(
   <React.StrictMode>
     <BrowserRouter>
